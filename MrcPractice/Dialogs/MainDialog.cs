@@ -4,7 +4,9 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using EchoBot;
+using System;
+using System.Linq;
+using Newtonsoft.Json.Linq;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Dialogs.Choices;
@@ -21,6 +23,7 @@ namespace EchoBot.Dialogs
             : base(nameof(MainDialog))
         {
             _logger = logger;
+
 
             // Define the main dialog and its related components.
             AddDialog(new ChoicePrompt(nameof(ChoicePrompt)));
